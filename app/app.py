@@ -9,7 +9,7 @@ from streamlit_lottie import st_lottie
 
 from insights import generate_daily_insight
 from session_control import check_last_submission_time, update_last_submission_time
-#from charts import show_weekly_charts
+from charts import show_weekly_charts
 
 # ─── File Paths ─────────────────────────────────────────────
 BASE_DIR = os.path.dirname(__file__)
@@ -125,9 +125,9 @@ if submitted:
     insight = generate_daily_insight(data)
     st.markdown(insight)
 
-    # st.divider()
-    # st.subheader("📊 Weekly Overview")
-    # show_weekly_charts(df)
+    st.divider()
+    st.subheader("📊 Weekly Overview")
+    show_weekly_charts(df)
 
   
 st.markdown("<div style='height: 80px;'></div>", unsafe_allow_html=True)
